@@ -88,6 +88,12 @@ nav ul li a:hover {
   flex-wrap: wrap;
   position: relative;
 }
+.carousel.active {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.5;
+}
 
 .carousel #imageFromHTML {
   display: block;
@@ -159,9 +165,32 @@ nav ul li a:hover {
   margin: 0;
   text-align: justify;
 }
+#buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 .carousel #movieinfo .movie-card-btn {
   border: 2px solid var(--mainColor);
+  width: 250px;
+  background-color: var(--mainColor);
+  color: var(--secondaryColor);
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  height: 60px;
+  margin: 50px 50px;
+  text-decoration: none;
+}
+.carousel #movieinfo .movie-card-adder {
   width: 250px;
   background-color: var(--mainColor);
   color: var(--secondaryColor);
@@ -188,6 +217,13 @@ nav ul li a:hover {
   padding: 0;
 }
 
+#movieUL.active {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.5;
+}
+
 /*card styling*/
 
 .card {
@@ -208,13 +244,13 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: 10px;
 }
+
 .card-body:nth-child(1) {
   visibility: visible;
 }
 
 .card-body {
   width: 130%;
-  height: 100%;
   position: absolute;
   right: -60%;
   top: 20%;
@@ -225,6 +261,7 @@ nav ul li a:hover {
   display: flex;
   visibility: hidden;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 20p;
   padding: 0;
@@ -289,27 +326,24 @@ nav ul li a:hover {
   margin: auto;
 }
 
-.card a i {
-  color: white;
+.card-body .card-delete {
   font-size: 2rem;
   position: absolute;
-  bottom: 25px;
   right: 10px;
-  display: none;
-}
-.card:hover i {
-  display: block;
+  bottom: 20px;
+  color: var(--mainColor);
+  cursor: pointer;
 }
 
 .card-btn {
-  width: 70%;
+  width: 50%;
   border: 2px solid var(--mainColor);
   background-color: var(--mainColor);
-  color: var(--tertiaryColor);
+  color: var(--secondaryColor);
   border-radius: 20px;
   font-size: 20px;
   font-weight: bold;
-  margin: 10px auto;
+  margin: 10px;
   padding: 20px 0 20px 0;
   display: flex;
   align-items: center;
@@ -319,13 +353,57 @@ nav ul li a:hover {
   height: 40px;
 }
 
+.card-body .card-link {
+  color: white;
+  background-color: #fff;
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
+}
+.card-link i {
+}
+
 form {
   width: 100%;
   margin: 50px auto 0 auto;
   position: relative;
   height: 100%;
+  visibility: hidden;
+  opacity: 0;
 }
-
+form.active {
+  border-radius: 20px;
+  width: 80%;
+  position: relative;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  box-shadow: rgba(252, 254, 254, 0.4) 0px 10px 10px 10px,
+    rgba(237, 231, 231, 0.06) 10px 1px 2px 0px;
+}
+#formCloser {
+  background-color: transparent;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 50px;
+  width: 50px;
+  font-size: 3rem;
+  text-align: center;
+  border:none;
+  border-radius: 50%;
+  color: cyan;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 form fieldset {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -14,10 +14,15 @@
     <title>MFLIX</title>
   </head>
   <body>
-
     <!--
   
-   
+    <a id="details" href="#popup">
+      <i id="play" class="fa-solid fa-circle-play"></i>
+    </a>
+
+    <a id="delete" class="delete" href="#popup">
+      <i class="fa-solid fa-trash-can fa-lg"></i>
+    </a>
     -->
 
     <div class="carousel">
@@ -58,7 +63,10 @@
             assumenda.
           </p>
         </div>
-        <button class="movie-card-btn">Watch Trailer</button>
+        <div id="buttons">
+          <a href="" class="movie-card-btn">Watch Trailer</a href="">
+            <button class="movie-card-adder">Add Movie</button>
+        </div>
       </div>
     </div>
 
@@ -92,7 +100,7 @@
           <input type="text" placeholder="year" class="inputs" id="name" />
         </div>
         <div class="input-data">
-          <input type="text" placeholder="rating" class="inputs" id="name" />
+          <input type="text" placeholder="review" class="inputs" id="name" />
         </div>
 
         <div class="input-data">
@@ -110,6 +118,7 @@
           SUBMIT
         </button>
       </fieldset>
+      <button type="button" id="formCloser">X</button>
     </form>
 
     <script src="index.js"></script>
