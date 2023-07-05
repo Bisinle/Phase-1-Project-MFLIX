@@ -1,29 +1,40 @@
 const movieUL = document.querySelector("#movieUL");
 const wrapper = document.querySelector("#wrapper");
+const imageFromHTML = document.querySelector("#imageFromHTML");
+console.log(imageFromHTML);
 
 console.log(movieUL);
 let imageSourceARRAY = [];
 
-function FetchAllData() {
-  fetch(`  http://localhost:3000/films`)
-    .then((res) => {
-      if (res.ok) {
-        console.log("Fetched SUCCESSFULLY");
-      } else {
-        console.log("Fetch FAILED");
-      }
-      return res.json();
-    })
-    .then((movies) => {
-      movies.forEach((movie) => {
-        movieCardCreator(movie);
-        movieImageArrayCreator(movie.poster, movie.id, movie.title);
-      });
+async function FetchAllData() {
+  try {
+    const res = await fetch(`http://localhost:3000/films`);
+    if (!res.ok) {
+      console.log("Fetch FAILED");
+      return;
+    }
+    console.log("Fetched SUCCESSFULLY");
+    const movies = await res.json();
+
+    movies.forEach((movie) => {
+      movieCardCreator(movie);
+      let srcValues = Object.values(movie.poster).join("");
+      imageSourceARRAY.push(srcValues);
     });
+
+    // After all data is fetched and processed, you can log the array here
+    console.log(imageSourceARRAY);
+
+    // Or call a function that relies on the array here
+    loopThroughTheArrayofImageSource(imageSourceARRAY);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 }
+console.log(imageSourceARRAY);
+
 FetchAllData();
 
-//************************************************************ */
 function movieCardCreator(movie) {
   const Card = document.createElement("li");
   Card.classList.add("card");
@@ -55,7 +66,6 @@ function movieCardCreator(movie) {
    
   
     </div>
-    </button>
     <button class="card-btn">Watch Trailer</button>
       </div>
     `;
@@ -63,28 +73,18 @@ function movieCardCreator(movie) {
   movieUL.append(Card);
 }
 
-function movieImageArrayCreator(Image, id, title) {
-  const imageElmentBuilt = document.createElement("img");
-  const imageList = document.createElement("li");
-  imageList.classList.add("slide"); //give each list a className of slide
-  imageElmentBuilt.classList.add("images");
-  imageElmentBuilt.setAttribute("src", `${Image}`);
-  imageElmentBuilt.setAttribute("alt", `${title} image `);
-  imageElmentBuilt.setAttribute("data-movie-id", `${id}`);
-  imageList.append(imageElmentBuilt); //attach the image to the li
-  wrapper.append(imageList); //attach the list that has the image inside to the wrapper in the HTML
 
-  imageSourceARRAY.push(imageList);
-  return wrapper;
+let start = 0;
+
+function loopThroughTheArrayofImageSource(array) {
+  if (start < array.length) {
+    start += 1;
+  } else {
+    start = 0; // Changed start = 1 to start = 0 to restart the loop
+  }
+  const currentImageSource = array[start]; // Here, you can do something with the image source from the array at the current index 'start'
+  imageFromHTML.src = currentImageSource; // For example, you can set the source of an <img> element to display the current image:
+  setTimeout(() => loopThroughTheArrayofImageSource(array), 2000); // Then use setTimeout to call the function again after 2000ms
 }
-console.log(wrapper);
-const litsThatContainImages = wrapper.getElementsByTagName("li");
-for (let i=1; i<litsThatContainImages; i++) {
-  li[0].setAttribute('data-active','true')
-    break
-  
-}
- const listimages = wrapper.getElementsByTagName("li");
- console.log(listimages);
-// // imageSourceARRAY[0].setAttribute("data-active", "true");
-// console.log(imageSourceARRAY);
+
+FetchAllData(); // This will start the loop once the data is fetched and processed.

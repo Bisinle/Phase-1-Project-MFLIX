@@ -7,15 +7,32 @@
     <title>MFLIX</title>
   </head>
   <body>
-    <div class="main-container">
-      <div class="carousel">
-        <button class="carousel-button prev">&larr;</button>
-        <button class="carousel-button next">&rarr;</button>
-         <ul id="wrapper"></ul>
+    <div class="carousel">
+      <img src="" id="imageFromHTML" alt="" />
+      <div id="movieinfo">
+        <h1 id="title-slike">movie title</h1>
+        <div id="info-div">
+          <h4>quality</h4>
+          <h4>year</h4>
+          <h4>run time</h4>
+          <h4>review</h4>
+        </div>
+        <div id="genre-country">
+          <h4><span>Country: </span> ${movie.country}</h4>
+          <h4><span>Genre: </span> ${movie.genre}</h4>
+        </div>
+
+        <div id="description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            laboriosam itaque veritatis
+          </p>
+        </div>
+        <button class="card-btn">Watch Trailer</button>
       </div>
-     
-      <ul id="movieUL"></ul>
     </div>
+
+    <ul id="movieUL"></ul>
 
     <script src="index.js"></script>
   </body>
