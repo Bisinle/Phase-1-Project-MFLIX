@@ -10,17 +10,73 @@
   --quaternary: #939393;
 }
 body {
-  background-color: rgb(121, 0, 0);
+  background-color: var(--tertiaryColor);
   padding: 0;
   margin: 0;
   text-align: center;
 }
 
-#main-container {
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  background-color: yellow;
+  flex: 1;
+  padding: 5px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px 25px;
+}
+nav ul li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--secondaryColor);
+  font-size: 1.4rem;
+  position: relative;
+  font-weight: bold;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  background-color: var(--secondaryColor);
+  height: 3px;
+  width: 0;
+  bottom: -10px;
+  transition: 0.5s;
+  left: 0;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+nav ul li a:hover {
+  color: var(--mainColor);
+}
+.home {
+  color: var(--mainColor);
+}
+.logo {
+  width: 150px;
+  height: 100px;
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
 }
 
 .carousel {
@@ -30,6 +86,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .carousel #imageFromHTML {
@@ -129,7 +186,6 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   padding: 0;
-  background-color: #333;
 }
 
 /*card styling*/
@@ -160,8 +216,8 @@ body {
   width: 130%;
   height: 100%;
   position: absolute;
-  right: -100%;
-  top: 30%;
+  right: -60%;
+  top: 20%;
   background: var(--tertiaryColor);
   backdrop-filter: blur(15px);
   border-radius: 20px;
@@ -261,4 +317,80 @@ body {
   text-align: center;
   cursor: pointer;
   height: 40px;
+}
+
+form {
+  width: 100%;
+  margin: 50px auto 0 auto;
+  position: relative;
+  height: 100%;
+}
+
+form fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  border-radius: 20px;
+  background-color: transparent;
+}
+.input-data {
+  height: 50px;
+  position: relative;
+  width: 80%;
+  margin: 30px auto;
+}
+
+legend {
+  color: white;
+  padding: 0px;
+  font-size: 30px;
+}
+
+.inputs {
+  border: none;
+  border-bottom: 3px solid var(--mainColor);
+  height: 30px;
+  width: 100%;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 1.5rem;
+}
+.inputs::placeholder {
+  font-size: 1.5rem;
+  color: var(--secondaryColor);
+}
+
+.input-data select {
+  position: absolute;
+  right: px;
+  bottom: 40px;
+  width: 20px;
+  color: var(--secondaryColor);
+  background-color: var(--mainColor);
+}
+.btn-submit {
+  width: 70%;
+  height: 50px;
+  margin: auto;
+  transform: translate(25%, 0%);
+  position: absolute;
+  bottom: 0px;
+}
+
+.submit {
+  color: white;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  border: 3px solid var(--mainColor);
+  width: 150px;
+  background: transparent;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--mainColor);
 }

@@ -9,12 +9,8 @@ const movieCountry = document.querySelector("#movieCountry");
 const movieGenre = document.querySelector("#movieGenre");
 const movieQuality = document.querySelector("#movieQuality");
 const movieDescription = document.querySelector("#movieDescription");
-
-console.log(imageFromHTML);
-
-console.log(movieUL);
 let imageSourceARRAY = [];
-
+console.log(imageSourceARRAY);
 async function FetchAllData() {
   try {
     const res = await fetch(`http://localhost:3000/films`);
@@ -27,21 +23,19 @@ async function FetchAllData() {
 
     movies.forEach((movie) => {
       movieCardCreator(movie);
-      let srcValues = Object.values(movie.poster).join("");
       imageSourceARRAY.push(movie);
+      deletMovieCard(movie)
+
     });
 
     // After all data is fetched and processed, you can log the array here
 
     // Or call a function that relies on the array here
-    loopThroughTheArrayofImageSource(imageSourceARRAY);
+    carouselMaker(imageSourceARRAY);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 }
-console.log(imageSourceARRAY);
-
-FetchAllData();
 
 function movieCardCreator(movie) {
   const Card = document.createElement("li");
@@ -80,10 +74,12 @@ function movieCardCreator(movie) {
 
   movieUL.append(Card);
 }
+function deletMovieCard(movie){
+  
+}
 
 let start = 0;
-
-function loopThroughTheArrayofImageSource(array) {
+function carouselMaker(array) {
   if (start < array.length - 1) {
     start += 1;
   } else {
@@ -97,12 +93,51 @@ function loopThroughTheArrayofImageSource(array) {
   movieQuality.textContent = currentMovieObject.quality;
   movieRuntime.textContent = currentMovieObject.runtime + " min";
   movieReview.textContent = currentMovieObject.review;
-
   movieGenre.textContent = ` ${currentMovieObject.genre}`;
   movieDescription.textContent = `${currentMovieObject.description}   Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-  laboriosam itaque veritatis Lorem, ipsum dolor sit amet consectetur
-  adipisicing elit. Beatae magnam numquam officiis repudiandae`;
-  setTimeout(() => loopThroughTheArrayofImageSource(array), 2000); // Then use setTimeout to call the function again after 2000ms
+  laboriosam itaque veritatis Lorem, ipsum dolor sit amet consectetur`;
+  setTimeout(() => carouselMaker(array), 2000); // Then use setTimeout to call the function again after 2000ms
 }
 
-FetchAllData(); // This will start the loop once the data is fetched and processed.
+FetchAllData(); // This  startS the loop once the data is fetched and processed.
+
+//**********************FORM SECTION************************************* */
+const form = document.querySelector("form");
+const allInputs = document.querySelectorAll(".inputs");
+const submitButton = document.querySelector("#submit");
+
+function createsMovieObjectFromUserInput(input) {
+  let objectCreatedFromTheUserInput = {};
+  for (let i = 0; i < input.length; i++) {
+    input[i].addEventListener("input", () => {
+      console.log(input[i].value);
+
+      objectCreatedFromTheUserInput[input[i].placeholder] = input[i].value;
+    });
+  }
+  formValidator(objectCreatedFromTheUserInput, input);
+}
+function formValidator(objectCreatedFromTheUserInput, input) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    for (let i = 0; i < input.length; i++) {
+      if (input[i].value === "") {
+        alert("no can do ");
+        break;
+      } else {
+        // pass the objectCreatedFromTheUserInput to the functon that going to peform the POST
+        postObjectCreatedFromTheUserInputToServer(objectCreatedFromTheUserInput);
+        break
+      }
+    }
+  });
+}
+function postObjectCreatedFromTheUserInputToServer(objectCreatedFromTheUserInput){
+  fetch(`http://localhost:3000/films`,{
+    method:'POST',
+    headers:{
+      "Content-Type": "application/json"
+    },
+    body:JSON.stringify(objectCreatedFromTheUserInput)
+  });
+}

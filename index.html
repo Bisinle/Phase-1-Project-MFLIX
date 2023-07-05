@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>MFLIX</title>
   </head>
   <body>
+  
+
     <div class="carousel">
+      <nav>
+        <img
+          src="./legion-logo-zip-file/png/logo-no-background.png"
+          class="logo"
+          alt="logo"
+        />
+
+        <ul>
+          <li><a href="" class="home">HOME</a></li>
+          <li><a href="">ABOUT</a></li>
+          <li><a href="">SERVICES</a></li>
+          <li><a href="">CONTACTS</a></li>
+          <li><a href="">LOCATION</a></li>
+        </ul>
+      </nav>
       <img src="" id="imageFromHTML" alt="" />
       <div id="movieinfo">
         <h1 id="movie-title"></h1>
@@ -20,14 +44,14 @@
         </div>
 
         <div id="genre">
-          <h4><span id="movieGenre"> </h4>
+          <h4 id="movieGenre"></h4>
         </div>
 
         <div id="description">
           <p id="movieDescription">
-           facilis
-            quaerat eos vitae enim aspernatur deserunt earum, nihil saepe
-            perspiciatis possimus illum, doloribus dolores voluptas assumenda.
+            facilis quaerat eos vitae enim aspernatur deserunt earum, nihil
+            saepe perspiciatis possimus illum, doloribus dolores voluptas
+            assumenda.
           </p>
         </div>
         <button class="movie-card-btn">Watch Trailer</button>
@@ -35,6 +59,54 @@
     </div>
 
     <ul id="movieUL"></ul>
+
+    <form action="#">
+      <fieldset>
+        <legend>Add Movie</legend>
+
+        <div class="input-data">
+          <input type="text" placeholder="title" class="inputs" id="name" />
+        </div>
+        <div class="input-data">
+          <input type="text" placeholder="poster" class="inputs" id="name" />
+        </div>
+        <div class="input-data">
+          <input
+            type="text"
+            placeholder="description"
+            class="inputs"
+            id="name"
+          />
+        </div>
+        <div class="input-data">
+          <input type="text" placeholder="trailer" class="inputs" id="name" />
+        </div>
+        <div class="input-data">
+          <input type="text" placeholder="quality" class="inputs" id="name" />
+        </div>
+        <div class="input-data">
+          <input type="text" placeholder="year" class="inputs" id="name" />
+        </div>
+        <div class="input-data">
+          <input type="text" placeholder="rating" class="inputs" id="name" />
+        </div>
+
+        <div class="input-data">
+          <input type="number" placeholder="runtime" class="inputs" id="name" />
+        </div>
+
+        <div class="input-data">
+          <input type="text" placeholder="country" class="inputs" id="votes" />
+        </div>
+        <div class="input-data">
+          <input type="text" placeholder="genre" class="inputs" id="votes" />
+        </div>
+
+        <button type="submit" id="submit" class="submit input-data">
+          SUBMIT
+        </button>
+      </fieldset>
+    </form>
 
     <script src="index.js"></script>
   </body>
