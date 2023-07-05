@@ -1,7 +1,7 @@
 {
   "films": [
     {
-      "id": "1",
+      "id": 1,
       "title": "The Giant Gila Monster",
       "runtime": "108",
       "capacity": 30,
@@ -16,7 +16,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Manos: The Hands Of Fate",
       "runtime": "118",
       "capacity": 50,
@@ -31,7 +31,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Time Chasers",
       "runtime": "93",
       "capacity": 50,
@@ -46,7 +46,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "4",
+      "id": 4,
       "title": "The Touch Of Satan",
       "runtime": "101",
       "capacity": 40,
@@ -61,7 +61,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "5",
+      "id": 5,
       "title": "Santa Claus Conquers The Martians",
       "runtime": "96",
       "capacity": 50,
@@ -76,7 +76,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "6",
+      "id": 6,
       "title": "Track Of The Moon Beast",
       "runtime": "112",
       "capacity": 30,
@@ -91,7 +91,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "7",
+      "id": 7,
       "title": "The Skydivers",
       "runtime": "94",
       "capacity": 30,
@@ -106,7 +106,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "8",
+      "id": 8,
       "title": "The Killer Shrews",
       "runtime": "115",
       "capacity": 40,
@@ -121,7 +121,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "9",
+      "id": 9,
       "title": "Project Moon Base",
       "runtime": "99",
       "capacity": 40,
@@ -136,7 +136,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "10",
+      "id": 10,
       "title": "The Giant Spider Invasion",
       "runtime": "122",
       "capacity": 50,
@@ -151,7 +151,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "11",
+      "id": 11,
       "title": "Catalina Caper",
       "runtime": "104",
       "capacity": 30,
@@ -166,7 +166,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "12",
+      "id": 12,
       "title": "Secret Agent Super Dragon",
       "runtime": "104",
       "capacity": 30,
@@ -182,7 +182,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "13",
+      "id": 13,
       "title": "Wild Rebels",
       "runtime": "100",
       "capacity": 40,
@@ -197,7 +197,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "14",
+      "id": 14,
       "title": "Danger: Diabolik",
       "runtime": "111",
       "capacity": 50,
@@ -212,7 +212,7 @@
       "genre": "romance, action, comedy"
     },
     {
-      "id": "15",
+      "id": 15,
       "title": "Village Of The Giants",
       "runtime": "98",
       "capacity": 50,
@@ -237,7 +237,33 @@
       "runtime": "149",
       "country": "USA",
       "genre": " Sci-Fi, Adventure, Action",
-      "id": "DM6-uwp"
+      "id": 16
+    },
+    {
+      "poster": "https://wallpapercave.com/wp/wp12302330.jpg",
+      "description": "Dom Toretto and his family are targeted by the vengeful son of drug kingpin Hernan Reyes.",
+      "trailer": "https://www.youtube.com/watch?v=eoOaKN4qCKw",
+      "title": "Fast X",
+      "quality": "HD",
+      "year": "2023",
+      "rating": "5.9/10",
+      "runtime": "141",
+      "country": "USA, CHINA",
+      "genre": " Adventure, Action, Crime",
+      "id": 17
+    },
+    {
+      "poster": "https://image.pmgstatic.com/cache/resized/w663/files/images/film/posters/166/814/166814729_6e47ce.jpg",
+      "title": "Top Gun: Maverick",
+      "description": "After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to ...",
+      "quality": "HD",
+      "year": "2022",
+      "rating": "8.3/10",
+      "runtime": "130",
+      "country": "USA",
+      "genre": " Drama, Action",
+      "trailer": "https://www.youtube.com/watch?v=giXco2jaZ_4",
+      "id": 18
     }
   ]
 }

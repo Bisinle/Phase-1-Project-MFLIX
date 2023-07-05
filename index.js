@@ -23,9 +23,8 @@ async function FetchAllData() {
 
     movies.forEach((movie) => {
       movieCardCreator(movie);
+      let srcValues = Object.values(movie.poster).join("");
       imageSourceARRAY.push(movie);
-      deletMovieCard(movie)
-
     });
 
     // After all data is fetched and processed, you can log the array here
@@ -73,9 +72,6 @@ function movieCardCreator(movie) {
     `;
 
   movieUL.append(Card);
-}
-function deletMovieCard(movie){
-  
 }
 
 let start = 0;
@@ -126,18 +122,24 @@ function formValidator(objectCreatedFromTheUserInput, input) {
         break;
       } else {
         // pass the objectCreatedFromTheUserInput to the functon that going to peform the POST
-        postObjectCreatedFromTheUserInputToServer(objectCreatedFromTheUserInput);
-        break
+        postObjectCreatedFromTheUserInputToServer(
+          objectCreatedFromTheUserInput
+        );
+        break;
       }
     }
   });
 }
-function postObjectCreatedFromTheUserInputToServer(objectCreatedFromTheUserInput){
-  fetch(`http://localhost:3000/films`,{
-    method:'POST',
-    headers:{
-      "Content-Type": "application/json"
+console.log(createsMovieObjectFromUserInput(allInputs));
+
+function postObjectCreatedFromTheUserInputToServer(
+  objectCreatedFromTheUserInput
+) {
+  fetch(`http://localhost:3000/films`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
-    body:JSON.stringify(objectCreatedFromTheUserInput)
+    body: JSON.stringify(objectCreatedFromTheUserInput),
   });
 }
