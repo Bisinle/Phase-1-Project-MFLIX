@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root {
-  --mainColor: #06c2c2;
+  --mainColor: #0d9191;
   --secondaryColor: white;
   --tertiaryColor: rgba(0, 0, 0, 0.966);
   --quaternary: #939393;
@@ -40,18 +40,88 @@ body {
   object-position: center;
   background: rgba(0, 0, 0, 0.5);
   background-color: rgba(100, 200, 0, 1);
-  filter: brightness(43%);
+  filter: brightness(23%);
 }
 
-.carousel #movieinfo{
-  background-color: cyan;
+.carousel #movieinfo {
   position: absolute;
-  bottom: 20px;
-  width: 50%;
+  bottom: 100px;
+  width: 80%;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.carousel #movieinfo #movie-title {
+  text-transform: uppercase;
+  color: var(--secondaryColor);
+  font-size: 3.5rem;
+  width: 100%;
+  margin: 0;
+  display: flex;
 }
 
+.carousel #movieinfo #info-div {
+  display: flex;
+  width: 60%;
+}
+.carousel #movieinfo #info-div h4 {
+  margin: 20px;
+  font-size: 1.4rem;
+  border: 2px solid var(--mainColor);
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--mainColor);
+  color: var(--secondaryColor);
+}
 
+.carousel #movieinfo #genre {
+  font-size: 1.5rem;
+  font-weight: bold;
+  word-spacing: 10px;
+  width: 400px;
+  margin-left: 0px;
+  margin: 10px 0 20px 0;
 
+  color: var(--secondaryColor);
+}
+.carousel #movieinfo #genre h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+.carousel #movieinfo #description {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  color: var(--secondaryColor);
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel #movieinfo #description p {
+  margin: 0;
+  text-align: justify;
+}
+
+.carousel #movieinfo .movie-card-btn {
+  border: 2px solid var(--mainColor);
+  width: 250px;
+  background-color: var(--mainColor);
+  color: var(--secondaryColor);
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  height: 60px;
+  margin: 50px 50px;
+}
+/*************************************************************/
+/*styling the movie card container*/
 #movieUL {
   width: 90%;
   margin: 50px auto;
@@ -133,19 +203,7 @@ body {
   justify-content: space-around;
   color: var(--mainColor);
 }
-.carousel #movieinfo #info-div{
-  display: flex;
-  justify-content: space-around;
-  color: var(--mainColor);
-}
-.carousel #movieinfo #info-div h4 {
-  font-size: 20px;
-  font-weight: bold;
-  border: 2px solid;
-  padding: 5px 10px;
-  border-radius: 20px;
 
-}
 .card-body #card-body-div #info-div h4 {
   font-size: 20px;
   font-weight: bold;

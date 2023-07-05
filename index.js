@@ -1,6 +1,15 @@
 const movieUL = document.querySelector("#movieUL");
 const wrapper = document.querySelector("#wrapper");
 const imageFromHTML = document.querySelector("#imageFromHTML");
+const movieTitle = document.querySelector("#movie-title");
+const movieYear = document.querySelector("#movieYear");
+const movieRuntime = document.querySelector("#movieRuntime");
+const movieReview = document.querySelector("#movieReview");
+const movieCountry = document.querySelector("#movieCountry");
+const movieGenre = document.querySelector("#movieGenre");
+const movieQuality = document.querySelector("#movieQuality");
+const movieDescription = document.querySelector("#movieDescription");
+
 console.log(imageFromHTML);
 
 console.log(movieUL);
@@ -19,11 +28,10 @@ async function FetchAllData() {
     movies.forEach((movie) => {
       movieCardCreator(movie);
       let srcValues = Object.values(movie.poster).join("");
-      imageSourceARRAY.push(srcValues);
+      imageSourceARRAY.push(movie);
     });
 
     // After all data is fetched and processed, you can log the array here
-    console.log(imageSourceARRAY);
 
     // Or call a function that relies on the array here
     loopThroughTheArrayofImageSource(imageSourceARRAY);
@@ -73,17 +81,27 @@ function movieCardCreator(movie) {
   movieUL.append(Card);
 }
 
-
 let start = 0;
 
 function loopThroughTheArrayofImageSource(array) {
-  if (start < array.length) {
+  if (start < array.length - 1) {
     start += 1;
   } else {
     start = 0; // Changed start = 1 to start = 0 to restart the loop
   }
-  const currentImageSource = array[start]; // Here, you can do something with the image source from the array at the current index 'start'
+  const currentMovieObject = array[start]; // Here, you can do something with the image source from the array at the current index 'start'
+  const currentImageSource = currentMovieObject.poster;
   imageFromHTML.src = currentImageSource; // For example, you can set the source of an <img> element to display the current image:
+  movieTitle.textContent = currentMovieObject.title;
+  movieYear.textContent = currentMovieObject.year;
+  movieQuality.textContent = currentMovieObject.quality;
+  movieRuntime.textContent = currentMovieObject.runtime + " min";
+  movieReview.textContent = currentMovieObject.review;
+
+  movieGenre.textContent = ` ${currentMovieObject.genre}`;
+  movieDescription.textContent = `${currentMovieObject.description}   Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+  laboriosam itaque veritatis Lorem, ipsum dolor sit amet consectetur
+  adipisicing elit. Beatae magnam numquam officiis repudiandae`;
   setTimeout(() => loopThroughTheArrayofImageSource(array), 2000); // Then use setTimeout to call the function again after 2000ms
 }
 
