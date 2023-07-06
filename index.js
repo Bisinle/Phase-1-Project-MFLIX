@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
    
   
     </div>
-    <button class="card-btn">Watch Trailer</button>     
+    <a href="${movie.trailer}" class="card-btn">Watch Trailer</a>     
       </div>
     `;
     Card.setAttribute("data-movie-id", `${movie.id}`);
