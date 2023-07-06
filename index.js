@@ -18,17 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let imageSourceARRAY = [];
   console.log(imageSourceARRAY);
 
-  movieAdder.addEventListener("click", () => {
-    form.classList.toggle("active");
-    carousel.classList.add("active");
-    movieUL.classList.add("active");
-  });
-  formCloser.addEventListener("click", () => {
-    form.classList.remove("active");
-    carousel.classList.remove("active");
-    movieUL.classList.remove("active");
-  });
-
   async function FetchAllData() {
     try {
       const res = await fetch(`http://localhost:3000/films`);
@@ -49,6 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Or call a function that relies on the array here
       carouselMaker(imageSourceARRAY);
+      let likedMoviesReturn = favouriteMovies(movieCards); //likedMoviesCreator(movieCards); //global variable
+      console.log(likedMoviesReturn);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -89,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <i id="trash-${movie.id}" class="fa-solid card-delete fa-trash-can fa-xs"></i> 
       </div>
     `;
-
+    Card.setAttribute("data-movie-id", `${movie.id}`);
     movieUL.append(Card);
     const deleteButton = document.querySelector(`#trash-${movie.id}`);
     deleteButton.addEventListener("click", () => {
@@ -116,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     movieDescription.textContent = `${currentMovieObject.description}   Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
   laboriosam itaque veritatis Lorem, ipsum dolor sit amet consectetur`;
     trailerBtn.href = currentMovieObject.trailer;
-    setTimeout(() => carouselMaker(array), 2000); // Then use setTimeout to call the function again after 2000ms
+    setTimeout(() => carouselMaker(array), 4000); // Then use setTimeout to call the function again after 2000ms
   }
 
   FetchAllData(); // This  startS the loop once the data is fetched and processed.
@@ -126,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const allInputs = document.querySelectorAll(".inputs");
   const submitButton = document.querySelector("#submit");
 
+  createsMovieObjectFromUserInput(allInputs);
   function createsMovieObjectFromUserInput(input) {
     let objectCreatedFromTheUserInput = {};
     for (let i = 0; i < input.length; i++) {
@@ -142,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     formValidator(objectCreatedFromTheUserInput, input);
   }
+
   function formValidator(objectCreatedFromTheUserInput, input) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -163,8 +156,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  console.log(createsMovieObjectFromUserInput(allInputs));
+  function formPopupOpener(movieAdder) {
+    movieAdder.addEventListener("click", () => {
+      form.classList.toggle("active");
+      carousel.classList.add("active");
+      movieUL.classList.add("active");
+    });
+  }
+  function formPopupOCloser(formCloser) {
+    formCloser.addEventListener("click", () => {
+      form.classList.remove("active");
+      carousel.classList.remove("active");
+      movieUL.classList.remove("active");
+    });
+  }
+  formPopupOpener(movieAdder);
+  formPopupOCloser(formCloser);
 
   function postObjectCreatedFromTheUserInputToServer(
     objectCreatedFromTheUserInput
@@ -185,5 +192,50 @@ document.addEventListener("DOMContentLoaded", () => {
         "Content-Type": "application/json",
       },
     });
+  }
+
+  //***********LIKED MOVIES SECTION************** */
+
+  console.log(movieUL);
+  const movieCards = movieUL.getElementsByTagName("li");
+  const likedMovies = document.querySelector("#liked-movies");
+  function favouriteMovies(movieCards) {
+    let clonedCardsArray = [];
+    for (let i = 0; i < movieCards.length; i++) {
+      movieCards[i]
+        .querySelector(".card-body")
+        .addEventListener("click", () => {
+          const clonedCard = movieCards[i].cloneNode(true);
+
+          // Check if the cloned card is already present in the likedMovies div
+          const existingCards = likedMovies.querySelectorAll(".card");
+          const isDuplicate = Array.from(existingCards).some((card) =>
+            card.isEqualNode(clonedCard)
+          );
+
+          if (!isDuplicate) {
+            likedMovies.append(clonedCard);
+            clonedCardsArray.push(clonedCard);
+          } else {
+            alert("You have already liked this movie.");
+          }
+          deleteFavouriteMovies(likedMovies, clonedCardsArray);
+        });
+    }
+
+    return likedMovies;
+  }
+
+  function deleteFavouriteMovies(likedMovies, array) {
+    console.log(likedMovies);
+    const clonedCards = Array.from(likedMovies.querySelectorAll(".card"));
+    for (let i = 0; i < clonedCards.length; i++) {
+      clonedCards[i]
+        .querySelector(".card-body")
+        .addEventListener("click", () => {
+          likedMovies.removeChild(clonedCards[i]);
+        });
+    }
+    console.log(clonedCards);
   }
 });

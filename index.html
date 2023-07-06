@@ -35,10 +35,10 @@
 
         <ul>
           <li><a href="" class="home">HOME</a></li>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">SERVICES</a></li>
-          <li><a href="">CONTACTS</a></li>
-          <li><a href="">LOCATION</a></li>
+          <li><a href="">GNERE</a></li>
+          <li><a href="">TV SHOWS</a></li>
+          <li><a href="">MOVIES</a></li>
+          <li><a href="">LOGING</a></li>
         </ul>
       </nav>
       <img src="" id="imageFromHTML" alt="" />
@@ -64,8 +64,8 @@
           </p>
         </div>
         <div id="buttons">
-          <a href="" class="movie-card-btn">Watch Trailer</a href="">
-            <button class="movie-card-adder">Add Movie</button>
+          <a href="" class="movie-card-btn">Watch Trailer</a>
+          <button class="movie-card-adder">Add Movie</button>
         </div>
       </div>
     </div>
@@ -97,10 +97,16 @@
           <input type="text" placeholder="quality" class="inputs" id="name" />
         </div>
         <div class="input-data">
-          <input type="text" placeholder="year" class="inputs" id="name" />
+          <input type="number" placeholder="year" class="inputs" id="name" />
         </div>
         <div class="input-data">
-          <input type="text" placeholder="review" class="inputs" id="name" />
+          <input
+            type="number"
+            placeholder="review"
+            class="inputs"
+            id="name"
+            step=".01"
+          />
         </div>
 
         <div class="input-data">
@@ -120,6 +126,23 @@
       </fieldset>
       <button type="button" id="formCloser">X</button>
     </form>
+
+    <div id="liked-movies">
+     
+    </div>
+
+    <!--
+        <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/t9QePUT-Yt8?start=3&autoplay=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+
+-->
 
     <script src="index.js"></script>
   </body>

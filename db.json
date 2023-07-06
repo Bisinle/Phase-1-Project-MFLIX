@@ -1,21 +1,6 @@
 {
   "films": [
     {
-      "id": 15,
-      "title": "Village Of The Giants",
-      "runtime": "98",
-      "capacity": 50,
-      "showtime": "04:45PM",
-      "tickets_sold": 33,
-      "description": "Delinquent teen-agers ingest a substance and grow thirty feet tall, then proceed to take over a small town.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/37991/p37991_v_v8_aa.jpg",
-      "quality": "HD",
-      "review": "4.5/10",
-      "year": "2020",
-      "country": "USA",
-      "genre": "romance, action, comedy"
-    },
-    {
       "title": "Avengers: Infinity War",
       "poster": "https://imageio.forbes.com/blogs-images/scottmendelson/files/2018/04/image001.jpg?format=jpg&width=1200",
       "description": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
@@ -105,6 +90,32 @@
       "genre": " Thriller, Adventure, Action",
       "trailer": "https://www.youtube.com/watch?v=t9QePUT-Yt8",
       "id": 22
+    },
+    {
+      "poster": "https://wallpaperaccess.com/full/3435044.jpg",
+      "trailer": "https://www.youtube.com/watch?v=bZ7Li5w2I-k",
+      "title": "Prince of Persia: The Sands of Time",
+      "description": "A young fugitive prince and princess must stop a villain who unknowingly threatens to destroy the world with a special dagger that enables the magic sand inside to reverse time.",
+      "quality": "HD",
+      "country": "USA",
+      "genre": " Adventure, Action, Fantasy",
+      "review": "7/10",
+      "runtime": "116",
+      "year": "210",
+      "id": 23
+    },
+    {
+      "poster": "https://i.etsystatic.com/10683147/r/il/990c01/2448165057/il_570xN.2448165057_3v3t.jpg",
+      "description": "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery.",
+      "title": "The Lion King",
+      "genre": " Drama, Animation, Adventure",
+      "country": "USA, UK",
+      "review": "6.8/10",
+      "runtime": "118",
+      "year": "2019",
+      "quality": "HD",
+      "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/7TavVZMewpY?start=5\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>",
+      "id": 24
     }
   ]
 }
