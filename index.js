@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function FetchAllData() {
     try {
-      const res = await fetch(`http://localhost:3000/films`);
+      const res = await fetch(`https://mflix-4c7j.onrender.com/films`);
       if (!res.ok) {
         console.log("Fetch FAILED");
         return;
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function postObjectCreatedFromTheUserInputToServer(
     objectCreatedFromTheUserInput
   ) {
-    fetch(`http://localhost:3000/films`, {
+    fetch(`https://mflix-4c7j.onrender.com/films`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function deleteMovieCard(id) {
-    fetch(`http://localhost:3000/films/${id}`, {
+    fetch(`https://mflix-4c7j.onrender.com/films/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
