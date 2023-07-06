@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function FetchAllData() {
     try {
-      const res = await fetch(`http://localhost:3000/films`);
+      const res = await fetch(`https://mflix-4c7j.onrender.com/films`);
       if (!res.ok) {
         console.log("Fetch FAILED");
         return;
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Or call a function that relies on the array here
       carouselMaker(imageSourceARRAY);
-      let likedMoviesReturn = favouriteMovies(movieCards); //likedMoviesCreator(movieCards); //global variable
+      let likedMoviesReturn = addMovieToFavourites(movieCards); //likedMoviesCreator(movieCards); //global variable
       console.log(likedMoviesReturn);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -161,6 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert("No can do. Please fill in all the fields.");
       }
+      for (let i = 0; i < input.length; i++) {
+        input[i].value = "";
+      }
     });
   }
   function formPopupOpener(movieAdder) {
@@ -183,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function postObjectCreatedFromTheUserInputToServer(
     objectCreatedFromTheUserInput
   ) {
-    fetch(`http://localhost:3000/films`, {
+    fetch(`https://mflix-4c7j.onrender.com/films`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -193,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function deleteMovieCard(id) {
-    fetch(`http://localhost:3000/films/${id}`, {
+    fetch(`https://mflix-4c7j.onrender.com/films/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -201,18 +204,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //***********LIKED MOVIES SECTION************** */
+  //***********FAVOURITE MOVIES SECTION************** */
 
   console.log(movieUL);
   const movieCards = movieUL.getElementsByTagName("li");
   const likedMovies = document.querySelector("#liked-movies");
-  function favouriteMovies(movieCards) {
+  function addMovieToFavourites(movieCards) {
     let clonedCardsArray = [];
     for (let i = 0; i < movieCards.length; i++) {
       const likeMovie = movieCards[i].querySelector(".card .card-like");
       likeMovie.addEventListener("click", () => {
         const clonedCard = movieCards[i].cloneNode(true);
-        console.log("hellow");
+        clonedCard.classList.add("resize-cloned-card");
 
         // Check if the cloned card is already present in the likedMovies div
         const existingCards = likedMovies.querySelectorAll(".card");

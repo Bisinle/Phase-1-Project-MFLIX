@@ -116,6 +116,97 @@
       "quality": "HD",
       "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/7TavVZMewpY?start=5\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>",
       "id": 24
+    },
+    {
+      "trailer": "https://www.youtube.com/watch?v=Y274jZs5s7s",
+      "description": "After barely surviving his grievous wounds from his mission in Dhaka, Bangladesh, Tyler Rake is back, and his team is ready to take on their next mission.",
+      "title": "Extraction II",
+      "poster": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQbZjePaFmA1nw9NalBHKm6R7Xiwc_4-2A7PKbYJ3EWK0IT5vTw4HR6sJ4WlwqXGhRKiwSTtp6-wGhlY750yin8w_JJevpFlgvhogv0bfr6bn0WVjiajXsK9Cex_fhe9joqH2r9FxUuh1lpGglkRJ7eun.jpg?r=052",
+      "quality": "HD",
+      "year": "2023",
+      "review": "7.1/10",
+      "runtime": "122",
+      "country": "usa",
+      "genre": " Thriller, Action",
+      "id": 25
+    },
+    {
+      "poster": "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/07/Iron-Man-4-Poster-and-Logo.jpg",
+      "title": "Iron Man 3",
+      "trailer": "https://www.youtube.com/watch?v=Ke1Y3P9D0Bc",
+      "description": "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
+      "quality": "HD",
+      "year": "2013",
+      "review": "7.2/10",
+      "runtime": "130",
+      "country": "usa",
+      "genre": " Adventure, Action",
+      "id": 26
+    },
+    {
+      "poster": "https://assets1.ignimgs.com/2016/01/15/deadpool2jpg-19c159.jpg?width=300",
+      "trailer": "https://www.youtube.com/watch?v=D86RtevtfrA",
+      "description": "Ajax, a twisted scientist, experiments on Wade Wilson, a mercenary, to cure him of cancer and give him healing powers. However, the experiment leaves Wade disfigured and he decides to exact revenge.",
+      "title": "Deadpool",
+      "quality": "HD",
+      "year": "2018",
+      "review": "82/10",
+      "runtime": "148",
+      "country": "usa",
+      "genre": "action, drama",
+      "id": 27
+    },
+    {
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTU4ODAzMzcxOV5BMl5BanBnXkFtZTgwODkxMDI1NjE@._V1_.jpg",
+      "title": "Ride along 2",
+      "description": "Security guard Ben must prove himself to his girlfriend's brother, top police officer James. He rides along James on a 24-hour patrol of Atlanta.",
+      "trailer": "https://www.youtube.com/watch?v=iWfmmwdCHTg",
+      "quality": "HD",
+      "year": "2016",
+      "review": "6.3/10",
+      "runtime": "141",
+      "country": "usa",
+      "genre": "comdey, action",
+      "id": 28
+    },
+    {
+      "poster": "https://m.media-amazon.com/images/M/MV5BNTZjNzRjMTMtZDMzNy00Y2ZjLTg0OTAtZjVhNzYyZmJjOTljXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UY3000_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=RLoKtb4c4W0",
+      "title": "21  jump street",
+      "description": "A pair of underachieving cops are sent back to a local high school to blend in and bring down a synthetic drug ring.",
+      "quality": "HD",
+      "year": "2012",
+      "review": "6/10",
+      "runtime": "149",
+      "country": "usa ",
+      "genre": "action, drama, romance",
+      "id": 29
+    },
+    {
+      "poster": "https://citizentv.s3.amazonaws.com/65161/conversions/bt-og_image.webp",
+      "title": "Bullet train",
+      "description": "Five assassins aboard a swiftly-moving bullet train find out that their missions have something in common.",
+      "quality": "HD",
+      "year": "2022",
+      "review": "8/10",
+      "runtime": "201",
+      "country": "usa",
+      "genre": "actino, crime, thriller",
+      "trailer": "https://www.youtube.com/watch?v=0IOsk2Vlc4o",
+      "id": 30
+    },
+    {
+      "poster": "https://ntvb.tmsimg.com/assets/p21575369_v_h8_aa.jpg?w=960&h=540",
+      "description": "A hard-working, blue-collar dad just wants to provide a good life for his quick-witted 10-year-old daughter. His mundane San Fernando Valley pool cleaning job is a front for his real source of income: hunting and killing vampires.",
+      "title": "Daya shift",
+      "trailer": "https://www.youtube.com/watch?v=GN_IwBptKi4",
+      "quality": "hd",
+      "year": "2022",
+      "review": "6.1/10",
+      "runtime": "153",
+      "country": "usa",
+      "genre": "horror, action",
+      "id": 31
     }
   ]
 }
