@@ -234,22 +234,46 @@ nav ul li a:hover {
   /* overflow: hidden; */
   position: relative;
   margin: 20px;
-  border: 2px solid var(--secondaryColor);
   text-decoration: none;
   list-style-type: none;
+  /* box-shadow: 2px 2px 10px 2px #333; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card .onCard {
+  color: var(--mainColor);
+  font-size: 1.27em;
+  margin: 0;
+  text-transform: lowercase;
+  position: absolute;
+  bottom: 0;
+}
+.card #image-wrapper {
+  width: 100%;
+  height: 90%;
+  border-radius: 20px;
+}
+.card #image-wrapper:hover {
+  background: linear-gradient(
+    0deg,
+    rgba(15, 244, 240, 0.8) 100%,
+    rgba(14, 255, 219, 0) 100.71%
+  );
 }
 
-.card-img {
+.card #image-wrapper .card-img {
   width: 100%;
   height: 100%;
+  border: 2px solid var(--secondaryColor);
   object-fit: cover;
   border-radius: 10px;
+  opacity: 0.8;
 }
 
-.card-body:nth-child(1) {
+/* .card-body:nth-child(1) {
   visibility: visible;
-}
-
+} */
 .card-body {
   width: 130%;
   position: absolute;
@@ -269,7 +293,7 @@ nav ul li a:hover {
   border: 2px solid var(--mainColor);
 }
 
-.card:hover .card-body {
+#image-wrapper:hover ~ .card-body {
   visibility: visible;
   z-index: 1;
 }
@@ -277,6 +301,15 @@ nav ul li a:hover {
   height: 100%;
   width: 100%;
   position: relative;
+}
+.card-body:hover {
+  visibility: visible;
+  z-index: 1;
+}
+.card-img:hover + .card-body,
+.card-body:hover {
+  visibility: visible;
+  z-index: 1;
 }
 
 .card-title {
@@ -327,24 +360,28 @@ nav ul li a:hover {
   margin: auto;
 }
 
-.card-body .card-delete {
-  font-size: 2rem;
+.card .card-delete {
+  font-size: 1.5rem;
   position: absolute;
   right: 10px;
   bottom: 20px;
-  color: var(--mainColor);
+  color: cyan;
   cursor: pointer;
+  display: none;
 }
-.card-body .card-like {
-  font-size: 3rem;
+.card:hover .card-delete {
+  display: block;
+}
+.card .card-like {
+  font-size: 1.6rem;
   position: absolute;
-  right: 10px;
-  top: 0px;
+  left: 10px;
+  bottom: 0px;
   cursor: pointer;
+
+  color: cyan;
 }
-.card-body .card-like.active {
-  color: #f0094d;
-}
+
 .card-btn {
   width: 50%;
   border: 2px solid var(--mainColor);

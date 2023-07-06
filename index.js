@@ -49,7 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const Card = document.createElement("li");
     Card.classList.add("card");
     Card.innerHTML = `
+    <div id="image-wrapper">
     <img src="${movie.poster}" class="card-img" alt="" />
+
+    </div>
+    <h1 class="card-title onCard">${movie.title}</h1>
+    <i id="trash-${movie.id}" class="fa-solid card-delete fa-trash-can fa-xs"></i> 
+    <i id="trash-${movie.id}" class="fa-solid  card-like fa-heart"></i>
+
+
     
     <div class="card-body card-bodyHover">
 
@@ -77,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     </div>
     <button class="card-btn">Watch Trailer</button>     
-    <i id="trash-${movie.id}" class="fa-solid card-delete fa-trash-can fa-xs"></i> 
       </div>
     `;
     Card.setAttribute("data-movie-id", `${movie.id}`);
@@ -202,25 +209,25 @@ document.addEventListener("DOMContentLoaded", () => {
   function favouriteMovies(movieCards) {
     let clonedCardsArray = [];
     for (let i = 0; i < movieCards.length; i++) {
-      movieCards[i]
-        .querySelector(".card-body")
-        .addEventListener("click", () => {
-          const clonedCard = movieCards[i].cloneNode(true);
+      const likeMovie = movieCards[i].querySelector(".card .card-like");
+      likeMovie.addEventListener("click", () => {
+        const clonedCard = movieCards[i].cloneNode(true);
+        console.log("hellow");
 
-          // Check if the cloned card is already present in the likedMovies div
-          const existingCards = likedMovies.querySelectorAll(".card");
-          const isDuplicate = Array.from(existingCards).some((card) =>
-            card.isEqualNode(clonedCard)
-          );
+        // Check if the cloned card is already present in the likedMovies div
+        const existingCards = likedMovies.querySelectorAll(".card");
+        const isDuplicate = Array.from(existingCards).some((card) =>
+          card.isEqualNode(clonedCard)
+        );
 
-          if (!isDuplicate) {
-            likedMovies.append(clonedCard);
-            clonedCardsArray.push(clonedCard);
-          } else {
-            alert("You have already liked this movie.");
-          }
-          deleteFavouriteMovies(likedMovies, clonedCardsArray);
-        });
+        if (!isDuplicate) {
+          likedMovies.append(clonedCard);
+          clonedCardsArray.push(clonedCard);
+        } else {
+          alert("You have already liked this movie.");
+        }
+        deleteFavouriteMovies(likedMovies, clonedCardsArray);
+      });
     }
 
     return likedMovies;
@@ -228,13 +235,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function deleteFavouriteMovies(likedMovies, array) {
     console.log(likedMovies);
-    const clonedCards = Array.from(likedMovies.querySelectorAll(".card"));
+    const clonedCards = Array.from(likedMovies.querySelectorAll(".card "));
+    console.log(clonedCards);
     for (let i = 0; i < clonedCards.length; i++) {
-      clonedCards[i]
-        .querySelector(".card-body")
-        .addEventListener("click", () => {
-          likedMovies.removeChild(clonedCards[i]);
-        });
+      const deleteFaveMovie = clonedCards[i].querySelector(".card-delete ");
+      deleteFaveMovie.addEventListener("click", () => {
+        likedMovies.removeChild(clonedCards[i]);
+      });
     }
     console.log(clonedCards);
   }
