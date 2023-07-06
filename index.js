@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <h1 class="card-title onCard">${movie.title}</h1>
     <i id="trash-${movie.id}" class="fa-solid card-delete fa-trash-can fa-xs"></i> 
-    <a href="#favourite-movies-header" id="like-link">
+    <a href="#fave-movies" id="like-link">
 
     <i id="trash-${movie.id}" class="fa-solid  card-like fa-heart"></i>
     </a>
