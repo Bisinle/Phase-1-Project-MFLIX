@@ -240,6 +240,8 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 .card .onCard {
   color: var(--mainColor);
@@ -373,13 +375,13 @@ nav ul li a:hover {
 .card:hover .card-delete {
   display: block;
 }
+
 .card .card-like {
   font-size: 1.6rem;
   position: absolute;
   left: 10px;
   bottom: 0px;
   cursor: pointer;
-
   color: cyan;
 }
 
@@ -520,7 +522,21 @@ legend {
   cursor: pointer;
   background-color: var(--mainColor);
 }
+/************fvaourite movies section************************/
+#fave-movies {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 2px solid var(--quaternary);
+  width: 80%;
+  margin: auto;
+  border-radius: 30px;
+  padding: 30px;
+}
 
+#fave-movies h1 {
+  color: white;
+}
 #liked-movies {
   display: flex;
   flex-wrap: wrap;
@@ -530,7 +546,23 @@ legend {
 
 #liked-movies .resize-cloned-card {
   width: 300px;
-height: 250px;
+  height: 200px;
   display: flex;
   flex-wrap: wrap;
+  padding: 20px;
+  margin: 30px;
+}
+
+#liked-movies .resize-cloned-card .card-like {
+  display: none;
+}
+#liked-movies .resize-cloned-card .onCard {
+  background-color: #fff;
+  position: absolute;
+  top: 110%;
+  bottom: 0;
+}
+
+#liked-movies .resize-cloned-card .card-body {
+  width: 150%;
 }
