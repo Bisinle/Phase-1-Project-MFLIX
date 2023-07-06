@@ -5,14 +5,37 @@
 `the code in this project  fetches movie data from a server, creates movie cards dynamically, and enables users to add and remove movies to/from favourite movies. handles form submission and validation and also
 POST and DELETE data from the server`
 
+![MFLIX](https://github.com/Bisinle/Phase-1-Project-MFLIX/assets/121357281/e29b1fed-1abf-455d-89ce-754d9ea95093)
+
+
+
+
 ## Features
 
 `Movie carousel:` The code implements a carousel that displays movie cards one at a time. It periodically updates the movie details and image source to create a dynamic carousel effect.
+![Carousel](https://github.com/Bisinle/Phase-1-Project-MFLIX/assets/121357281/35685d14-dfea-4470-b7d1-a37872b3968d)
+
+
+
+
 `Fetch movie data: `The code fetches movie data from a server using the fetch() API. It retrieves movies from the specified URL and processes the response data.
 `Create movie cards:` Movie cards are dynamically created based on the fetched data. Each card includes details such as the movie title, image, review, year, genre, and runtime. Users can click on the "Watch Trailer" button to view the movie trailer.
+![movieCards](https://github.com/Bisinle/Phase-1-Project-MFLIX/assets/121357281/e102260b-3468-4640-be9a-e8fa0223fbf5)
+
+
+
+
 `Add movies to favorites:` Users can click on the heart icon to add movies to their favorites list. When a movie is liked, a cloned version of the movie card is appended to the `Favourite Movies` section. Duplicate movies cannot be added to the list.
+![movieFavourites](https://github.com/Bisinle/Phase-1-Project-MFLIX/assets/121357281/67932f05-a450-4053-9f5e-b91ddb17e2c9)
+
+
+
 `Delete movies`: Users can delete movie cards by just hovering over the card title section and click the delete icon, additionally, users can also delete movie from the favorites list by clicking on the trash can icon associated with each movie card.
 `Form submission and validation:` The code includes a form section where users can input details of a new movie. Upon form submission, the data is sent to the server via a `POST` request. Form validation ensures that all required fields are filled before submission.
+![form](https://github.com/Bisinle/Phase-1-Project-MFLIX/assets/121357281/4a5e1180-0bec-4bb5-9b37-56c34947e2df)
+
+
+
 
 ## Setup and Usage
 
