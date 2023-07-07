@@ -37,18 +37,22 @@ POST and DELETE data from the server`
 
 
 
-## Setup and Usage
-
+## Setup 
 To use this code, follow these steps:
 
-1. Clone the repository or download the code files.
-2. Open the HTML file in a web browser.
-3. The movie carousel will start automatically, displaying movie cards fetched from the server.
-4. To watch a trailer of the movie that is displaying on the carousel, click on the `Watch trailer` button
-5. hover over a card to see that movie card information
-6. To add a movie to the favorites list, click the` heart icon` on a movie card. The cloned movie card will appear in the `Favourite Movies` section.
-7. To delete a movie from the database and from favorites list, click the `trash-can icon` associated with the movie card in the section. when trash-can on `Favourite Movie` movies is clicked, that movie is removed from the `Favourite Movie` section not from the database
-8. To add a new movie, click the "Add Movie" button. A form will appear where you can enter the details of the new movie. Fill in all the required fields and click the "Submit" button to add the movie. Note: The form data is sent to a server specified in the code, so make sure the server is running and accessible.
+1. Clone the repository to your local machine
+2. Open  the index.js file in your preferred code editor.
+3. Customize the script by modifying the variables, functions, or logic to suit your requirements.
+4. Open the HTML file in a web browser.
+   
+## Usage
+
+1. The movie carousel will start automatically, displaying movie cards fetched from the server.
+2.  To watch a trailer of the movie that is displaying on the carousel, click on the `Watch trailer` button
+3. hover over a card to see that movie card information
+4. To add a movie to the favorites list, click the` heart icon` on a movie card. The cloned movie card will appear in the `Favourite Movies` section.
+5. To delete a movie from the database and from favorites list, click the `trash-can icon` associated with the movie card in the section. when trash-can on `Favourite Movie` movies is clicked, that movie is removed from the `Favourite Movie` section not from the database
+6. To add a new movie, click the "Add Movie" button. A form will appear where you can enter the details of the new movie. Fill in all the required fields and click the "Submit" button to add the movie. Note: The form data is sent to a server specified in the code, so make sure the server is running and accessible.
    The movie carousel will continue to display movies in a loop, updating every few seconds.
 
 ## Dependencies
