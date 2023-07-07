@@ -81,6 +81,9 @@ nav ul li a:hover {
   }
 }
 
+
+/*********Carousel section***********************/
+
 .carousel {
   width: 100vw;
   height: 100vh;
@@ -235,7 +238,7 @@ nav ul li a:hover {
   opacity: 0.5;
 }
 
-/*card styling*/
+/**************card styling******************/
 
 .card {
   width: 350px;
@@ -284,9 +287,7 @@ nav ul li a:hover {
   opacity: 0.8;
 }
 
-/* .card-body:nth-child(1) {
-  visibility: visible;
-} */
+
 .card-body {
   width: 130%;
   position: absolute;
@@ -422,6 +423,8 @@ nav ul li a:hover {
 }
 .card-link i {
 }
+
+/***Form Section**/
 
 form {
   width: 100%;
