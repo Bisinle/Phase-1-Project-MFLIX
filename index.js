@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //movie-card-adder
   let imageSourceARRAY = [];
   console.log(imageSourceARRAY);
-
+//async function that fetchs our data and awaits the responce
   async function FetchAllData() {
     try {
       const res = await fetch(`https://mflix-4c7j.onrender.com/films`);
@@ -29,22 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const movies = await res.json();
 
       movies.forEach((movie) => {
-        movieCardCreator(movie);
-        let srcValues = Object.values(movie.poster).join("");
+        movieCardCreator(movie);  
         imageSourceARRAY.push(movie);
       });
 
-      // After all data is fetched and processed, you can log the array here
-
-      // Or call a function that relies on the array here
+   
       carouselMaker(imageSourceARRAY);
-      let likedMoviesReturn = addMovieToFavourites(movieCards); //likedMoviesCreator(movieCards); //global variable
+      let likedMoviesReturn = addMovieToFavourites(movieCards); 
       console.log(likedMoviesReturn);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
-
+//function to create our movie card dynamically
   function movieCardCreator(movie) {
     const Card = document.createElement("li");
     Card.classList.add("card");
@@ -98,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // a function to create our carousel by looping through our array of objects
   let start = 0;
   function carouselMaker(array) {
     if (start < array.length - 1) {
@@ -128,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = document.querySelector("#submit");
 
   createsMovieObjectFromUserInput(allInputs);
+  //create an object from the user input
   function createsMovieObjectFromUserInput(input) {
     let objectCreatedFromTheUserInput = {};
     for (let i = 0; i < input.length; i++) {
@@ -144,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     formValidator(objectCreatedFromTheUserInput, input);
   }
-
+//function to validate the form 
   function formValidator(objectCreatedFromTheUserInput, input) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -169,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  //Open the form when the movieAdder is clicked by adding the folowin classes to it
   function formPopupOpener(movieAdder) {
     movieAdder.addEventListener("click", () => {
       form.classList.toggle("active");
@@ -176,6 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
       movieUL.classList.add("active");
     });
   }
+  //Remove the form when the formCloser is clicked by removing all the  classes from it
   function formPopupOCloser(formCloser) {
     formCloser.addEventListener("click", () => {
       form.classList.remove("active");
@@ -186,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
   formPopupOpener(movieAdder);
   formPopupOCloser(formCloser);
 
+  //Post the object that was created from the user input to the server to updat our database
   function postObjectCreatedFromTheUserInputToServer(
     objectCreatedFromTheUserInput
   ) {
@@ -208,10 +210,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //***********FAVOURITE MOVIES SECTION************** */
-
   console.log(movieUL);
   const movieCards = movieUL.getElementsByTagName("li");
   const likedMovies = document.querySelector("#liked-movies");
+  //Add a movie to Favourite section when the hert icon clicked
   function addMovieToFavourites(movieCards) {
     let clonedCardsArray = [];
     for (let i = 0; i < movieCards.length; i++) {
@@ -239,6 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return likedMovies;
   }
 
+  //Delete a movies from the favourite movie section
   function deleteFavouriteMovies(likedMovies, array) {
     console.log(likedMovies);
     const clonedCards = Array.from(likedMovies.querySelectorAll(".card "));
