@@ -163,9 +163,14 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert("No can do. Please fill in all the fields.");
       }
+      //empty all the input fields when the form is submited
       for (let i = 0; i < input.length; i++) {
         input[i].value = "";
       }
+      //close the form when it is submitted
+      form.classList.remove("active");
+      carousel.classList.remove("active");
+      movieUL.classList.remove("active");
     });
   }
   //Open the form when the movieAdder is clicked by adding the folowin classes to it
